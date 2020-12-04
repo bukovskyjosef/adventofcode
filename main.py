@@ -1,4 +1,4 @@
-# Using readlines() 
+# First star 
 file1 = open('expanses.txt', 'r') 
 Lines = file1.readlines()
 
@@ -8,4 +8,3 @@ for n, line in enumerate(Lines):
       hello = int(line) * int(Lines[n+i])
 
 print (hello)
-  #print("Line{}: {}".format(count, line.strip()))
