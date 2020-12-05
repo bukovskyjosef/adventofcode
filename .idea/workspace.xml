@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17c5a378-7690-4df2-977f-92d4c8227564" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/02.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/02.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expanses.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+    <list default="true" id="17c5a378-7690-4df2-977f-92d4c8227564" name="Default Changelist" comment="Day2 - first star">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01.py" beforeDir="false" afterPath="$PROJECT_DIR$/01.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +27,28 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Python.02">
+  <component name="RunManager" selected="Python.01">
+    <configuration name="01" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="adventofcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/01.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="02" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="adventofcode" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -74,6 +93,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.01" />
         <item itemvalue="Python.02" />
         <item itemvalue="Python.main" />
       </list>
@@ -88,6 +108,28 @@
       <option name="presentableId" value="Default" />
       <updated>1607118430913</updated>
     </task>
+    <task id="LOCAL-00001" summary="Day2 - first star">
+      <created>1607120906393</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607120906393</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Day2 - first star">
+      <created>1607120990486</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607120990486</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Day2 - first star">
+      <created>1607121003937</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607121003937</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,5 +142,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Day2 - first star" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day2 - first star" />
   </component>
 </project>
