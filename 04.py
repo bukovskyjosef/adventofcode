@@ -8,7 +8,7 @@ passports = [[]]
 pNumber = 0
 
 # prepare password fields
-for n, line in enumerate(lines):
+for  line in lines:
     if (line!=""):
         # process line
         regex = re.compile("(byr|iyr|eyr|hgt|hcl|ecl|pid|cid):")
@@ -23,8 +23,8 @@ for n, line in enumerate(lines):
 validPassports = 0
 
 #validate passports
-for n, passport in enumerate(passports):
-    if ("byr" in passports[n] and "iyr" in passports[n] and "eyr" in passports[n] and "hgt" in passports[n] and "hcl" in passports[n] and "ecl" in passports[n] and "pid" in passports[n]):
+for passport in passports:
+    if ("byr" in passport and "iyr" in passport and "eyr" in passport and "hgt" in passport and "hcl" in passport and "ecl" in passport and "pid" in passport):
         validPassports = validPassports+1
 
 print(validPassports)
