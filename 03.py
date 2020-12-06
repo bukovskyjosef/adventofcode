@@ -44,7 +44,6 @@ for n, line in enumerate(lines):
         if (x==30):
             x=2
 x=0
-line=""
 
 # third slope
 for n, line in enumerate(lines):
