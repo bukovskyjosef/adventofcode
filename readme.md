@@ -11,6 +11,6 @@ about Advent of code, visit the website on
 <li>https://github.com/gASK13/AOC</li>
 <li>Tomas</li>
 <li>Jitka</li>
-<li>Lukas</li>
+<li>https://github.com/Lukisjama/AoC</li>
 <li>Roberta</li>
 <ul>
