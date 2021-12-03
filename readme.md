@@ -8,7 +8,7 @@ about Advent of code, visit the website on
 <ul>
 <li>https://github.com/makah21803/Advent_of_code</li>
 <li>https://github.com/gASK13/AOC</li>
-<li>Tomas</li>
+<li>https://github.com/kovalensue/advent_of_code_2021</li>
 <li>Jitka</li>
 <li>https://github.com/Lukisjama/AoC</li>
 <li>Roberta</li>
