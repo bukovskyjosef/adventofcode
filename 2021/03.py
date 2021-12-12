@@ -47,7 +47,7 @@ for o in registr:
         binarniCislo1 = binarniCislo1 + "0"
 
 print("binar0 " + str(binarniCislo0))
-print("binra1 " + str(binarniCislo1))
+print("binar1 " + str(binarniCislo1))
 
 vysledek = int(binarniCislo0, 2) * int(binarniCislo1, 2)
 print(vysledek)
