@@ -56,7 +56,7 @@ def checkWin(matrix):
         vysledek = 0
     return vysledek
 
-def zpracujViteznouRovnici(matrix, announcedNumber):
+def countWinnerMatrix(matrix, announcedNumber):
     soucet = 0
     for i in range(len(matrix)):
         for j in range(len(matrix[i])):
@@ -85,7 +85,7 @@ for announcedNumber in range(len(announcedNumbers)):
                     if matrix_list[matrix][line][item].return_value() == int(announcedNumbers[announcedNumber]):
                         matrix_list[matrix][line][item].mark_as_announced()
             if checkWin(matrix_list[matrix]):
-                zpracujViteznouRovnici(matrix_list[matrix],int(announcedNumbers[announcedNumber]))
+                countWinnerMatrix(matrix_list[matrix],int(announcedNumbers[announcedNumber]))
                 end = 1
                 break
 
