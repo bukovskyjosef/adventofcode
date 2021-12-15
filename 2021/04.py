@@ -13,7 +13,7 @@ class Item:
     def return_value(self):
         return int(self.value)
 
-
+#metoda vytvoří [] matic, kde jednotlive itemy jsou objekty tridy Item
 def create_matrix_list(lines):
     matrix_list = []
     matrix = []
@@ -32,6 +32,7 @@ def create_matrix_list(lines):
 
     return matrix_list
 
+# metoda má zkontrolovat, zda matice, přijatá v parametru splňuje podmínky výhry
 def checkWin(matrix):
 
     soucetRadku = 0
@@ -59,6 +60,7 @@ def checkWin(matrix):
         vysledek = 0
     return vysledek
 
+# metoda má za úkol vypočítat z výherní matice odpoveď na zadání úkolu.
 def countWinnerMatrix(matrix, announcedNumber):
     soucet = 0
     for i in range(len(matrix)):
@@ -74,21 +76,31 @@ lines = file.read().splitlines()
 
 #načtení vyhlašovaných čísel
 announcedNumbers = lines[0].split(",")
+
+# naplnění pole herních matic
 matrix_list = create_matrix_list(lines)
 
-
 end = 0
+
+# zbytek kódu není v metodě ale v těle programu
+# pro každé vyhlašené číslo
 for announcedNumber in range(len(announcedNumbers)):
     if end == 1:
         break
     else:
+        #pro každou matici
         for matrix in range(len(matrix_list)):
+            #pro každý řádek v matici
             for line in range(len(matrix_list[matrix])):
+                #pro každý objěkt v řádku matice
                 for item in range(len(matrix_list[matrix][line])):
+                    #pokud jde o právě vyhlášené číslo
                     if matrix_list[matrix][line][item].return_value() == int(announcedNumbers[announcedNumber]):
+                        #označ jej za uhodnuté
                         matrix_list[matrix][line][item].mark_as_announced()
+            #zkontroluj, zda je matice výherní
             if checkWin(matrix_list[matrix]):
-
+                # když je matice výherní, tak vytiskni info o ní
                 print("matrix: " + str(matrix))
                 print("announced number: " + str(announcedNumbers[announcedNumber]))
                 for radek in range(len(matrix_list[matrix])):
@@ -98,7 +110,6 @@ for announcedNumber in range(len(announcedNumbers)):
                         # print(str1, end = " ")
                         print(str2, end=" ")
                     print()
-
 
                 countWinnerMatrix(matrix_list[matrix],int(announcedNumbers[announcedNumber]))
                 end = 1
