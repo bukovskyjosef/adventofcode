@@ -52,12 +52,13 @@ def checkWin(matrix):
                 soucetSloupcu = soucetSloupcu + 1
         if soucetSloupcu < 5 : soucetSloupcu = 0
 
-    if soucetRadku == 5 or soucetSloupcu == 5:
+    if soucetRadku >= 5 or soucetSloupcu >= 5:
         print("soucet radku : " + str(soucetRadku))
         print("soucetSloupcu : " + str(soucetSloupcu))
         vysledek = 1
     else:
         vysledek = 0
+
     return vysledek
 
 # metoda má za úkol vypočítat z výherní matice odpoveď na zadání úkolu.
@@ -85,11 +86,12 @@ end = 0
 # zbytek kódu není v metodě ale v těle programu
 # pro každé vyhlašené číslo
 for announcedNumber in range(len(announcedNumbers)):
-    if end == 1:
-        break
-    else:
         #pro každou matici
         for matrix in range(len(matrix_list)):
+
+            if end == 1:
+                break
+
             #pro každý řádek v matici
             for line in range(len(matrix_list[matrix])):
                 #pro každý objěkt v řádku matice
@@ -107,13 +109,12 @@ for announcedNumber in range(len(announcedNumbers)):
                     for hodnota in range(len(matrix_list[matrix][radek])):
                         str1 = str(matrix_list[matrix][radek][hodnota].return_value())
                         str2 = str(matrix_list[matrix][radek][hodnota].return_announced())
-                        # print(str1, end = " ")
+                        #print(str1, end = " ")
                         print(str2, end=" ")
                     print()
 
                 countWinnerMatrix(matrix_list[matrix],int(announcedNumbers[announcedNumber]))
                 end = 1
-                #break
 
 # 59598 too low
 # 60249 too low
