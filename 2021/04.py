@@ -6,7 +6,6 @@ class Item:
 
     def mark_as_announced(self):
         self.announced = 1
-        return "announced"
 
     def return_announced(self):
         return self.announced
@@ -23,15 +22,14 @@ def create_matrix_list(lines):
         if len(matrix) == 5:
             matrix_list.append(matrix)
             matrix = []
-        elif len(lines[i]) == 0:
-            print()
-        else:
+        elif len(lines[i]) > 0:
             #pridej do matice radek objektů Item
-            docasnyList = lines[i].split()
-            docasnyList2 = []
-            for item in range(len(docasnyList)):
-                docasnyList2.append(Item(docasnyList[item]))
-            matrix.append(docasnyList2)
+            values_temp_list = lines[i].split()
+            items_temp_list = []
+            for j in range(len(values_temp_list)):
+                items_temp_list.append(Item(values_temp_list[j]))
+            matrix.append(items_temp_list)
+
     return matrix_list
 
 def checkWin(matrix):
@@ -44,13 +42,18 @@ def checkWin(matrix):
         for item in range(len(matrix[radek])):
             if matrix[radek][item].return_announced() == 1:
                 soucetRadku = soucetRadku + 1
+        if soucetRadku < 5 : soucetRadku = 0
 
-    #součét sloupců
-    for radek in range(len(matrix)):
-        if matrix[radek][radek].return_announced() == 1:
-            soucetSloupcu = soucetSloupcu + 1
+    #součet sloupců
+    for sloupec in range(len(matrix[0])):
+        for radek in range(len(matrix[radek])):
+            if matrix[radek][sloupec].return_announced() == 1:
+                soucetSloupcu = soucetSloupcu + 1
+        if soucetSloupcu < 5 : soucetSloupcu = 0
 
     if soucetRadku == 5 or soucetSloupcu == 5:
+        print("soucet radku : " + str(soucetRadku))
+        print("soucetSloupcu : " + str(soucetSloupcu))
         vysledek = 1
     else:
         vysledek = 0
@@ -85,9 +88,22 @@ for announcedNumber in range(len(announcedNumbers)):
                     if matrix_list[matrix][line][item].return_value() == int(announcedNumbers[announcedNumber]):
                         matrix_list[matrix][line][item].mark_as_announced()
             if checkWin(matrix_list[matrix]):
+
+                print("matrix: " + str(matrix))
+                print("announced number: " + str(announcedNumbers[announcedNumber]))
+                for radek in range(len(matrix_list[matrix])):
+                    for hodnota in range(len(matrix_list[matrix][radek])):
+                        str1 = str(matrix_list[matrix][radek][hodnota].return_value())
+                        str2 = str(matrix_list[matrix][radek][hodnota].return_announced())
+                        # print(str1, end = " ")
+                        print(str2, end=" ")
+                    print()
+
+
                 countWinnerMatrix(matrix_list[matrix],int(announcedNumbers[announcedNumber]))
                 end = 1
-                break
+                #break
 
-#
+# 59598 too low
 # 60249 too low
+# 61060 too low
