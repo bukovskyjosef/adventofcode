@@ -53,8 +53,8 @@ def checkWin(matrix):
         if soucetSloupcu < 5 : soucetSloupcu = 0
 
     if soucetRadku >= 5 or soucetSloupcu >= 5:
-        print("soucet radku : " + str(soucetRadku))
-        print("soucetSloupcu : " + str(soucetSloupcu))
+        # print("soucet radku : " + str(soucetRadku))
+        # print("soucetSloupcu : " + str(soucetSloupcu))
         vysledek = 1
     else:
         vysledek = 0
@@ -81,6 +81,11 @@ announcedNumbers = lines[0].split(",")
 # naplnění pole herních matic
 matrix_list = create_matrix_list(lines)
 
+pocetMatic = len(matrix_list)
+pocetVyhernichMatic = 0
+maticeCoVyhraly = []
+posledniVyhleseneCislo = 0
+
 end = 0
 
 # zbytek kódu není v metodě ale v těle programu
@@ -102,20 +107,31 @@ for announcedNumber in range(len(announcedNumbers)):
                         matrix_list[matrix][line][item].mark_as_announced()
             #zkontroluj, zda je matice výherní
             if checkWin(matrix_list[matrix]):
-                # když je matice výherní, tak vytiskni info o ní
-                print("matrix: " + str(matrix))
-                print("announced number: " + str(announcedNumbers[announcedNumber]))
-                for radek in range(len(matrix_list[matrix])):
-                    for hodnota in range(len(matrix_list[matrix][radek])):
-                        str1 = str(matrix_list[matrix][radek][hodnota].return_value())
-                        str2 = str(matrix_list[matrix][radek][hodnota].return_announced())
-                        #print(str1, end = " ")
-                        print(str2, end=" ")
-                    print()
+                # když je matice výherní, tak
+                # print("matrix: " + str(matrix))
+                # print("announced number: " + str(announcedNumbers[announcedNumber]))
+                # for radek in range(len(matrix_list[matrix])):
+                #     for hodnota in range(len(matrix_list[matrix][radek])):
+                #         str1 = str(matrix_list[matrix][radek][hodnota].return_value())
+                #         str2 = str(matrix_list[matrix][radek][hodnota].return_announced())
+                #         #print(str1, end = " ")
+                #         print(str2, end=" ")
+                #     print()
 
-                countWinnerMatrix(matrix_list[matrix],int(announcedNumbers[announcedNumber]))
-                end = 1
+                #pokud ještě není v seznamu vyhraných matic, přidej ji tam
+                if matrix not in maticeCoVyhraly:
+                    maticeCoVyhraly.append(matrix)
+                    if(len(maticeCoVyhraly) == 99):
+                        posledniVyhleseneCislo = int(announcedNumbers[announcedNumber])
+                        delka = len(maticeCoVyhraly) - 1
+                        posledniMatice = (maticeCoVyhraly[delka])
+                        print(posledniMatice, posledniVyhleseneCislo)
+                        countWinnerMatrix(matrix_list[posledniMatice], posledniVyhleseneCislo)
+
+
+                #end = 1
 
 # 59598 too low
 # 60249 too low
 # 61060 too low
+# 64084 correct for 1st part
